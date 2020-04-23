@@ -3,12 +3,15 @@ const OngController = require('./controllers/OngController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
+const { celebrate, Segments, Joi } = require('celebrate')
 
 routes = express.Router();
+
 
 //ONG's
 
 routes.post('/ongs', OngController.create);
+
 routes.get('/ongs', OngController.index);
 
 routes.post('/incidents', IncidentController.create);

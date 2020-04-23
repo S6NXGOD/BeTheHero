@@ -3,14 +3,17 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
+    version: '12.1',
     connection: {
-      filename: './src/database/db.sqlite',
+      host : '127.0.0.1',
+      user : 'postgres',
+      password : 'Senha',
+      database : 'bethehero',
     },
     migrations: {
       directory: './src/database/migrations'
-    },
-    useNullAsDefault: true,
+    }
   },
 
 // ############################################################################################

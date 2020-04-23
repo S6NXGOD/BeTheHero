@@ -28,7 +28,7 @@ module.exports = {
     } = request.body;
     const ong_id = request.headers.authorization;
 
-    const [id] = await connection('incidents').insert({
+    const id = await connection('incidents').insert({
       titulo,
       descricao,
       value,
@@ -40,9 +40,7 @@ module.exports = {
   },
 
   async delete(request, response) {
-    const {
-      id
-    } = request.params;
+    const { id } = request.params;
     const ong_id = request.headers.authorization;
 
     const incident = await connection('incidents').where('id', id).select('ong_id').first();
